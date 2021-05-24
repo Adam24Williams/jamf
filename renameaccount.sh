@@ -19,12 +19,6 @@ if [[ "${UID}" != 0 ]]; then
 	exit 1
 fi
 
-# Ensures that the system is not domain bound
-readonly domainBoundCheck=$(dsconfigad -show)
-if [[ "${domainBoundCheck}" ]]; then
-	dsconfigad -force -remove -u johndoe -p nopasswordhere
-fi
-
 # Ensures that parameters are entered
 if [[ ${#} -ne 2 ]]; then
 	echo "Usage: $0 oldUserName newUserName"
