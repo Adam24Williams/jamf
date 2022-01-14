@@ -12,9 +12,8 @@
 cpuCheck=$(uname -m)
 
 if [[ "$cpuCheck" == "arm64" ]]; then
-    echo "M1 CPU has been detected."
+    echo "Apple Silicon has been detected."
     softwareupdate --install-rosetta --agree-to-license
-    jamf recon
 else
     echo "Does not need Rosetta 2 installed"
 fi

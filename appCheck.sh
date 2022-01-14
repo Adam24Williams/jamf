@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Written By: Adam Williams
-# Info: Check to see if a specific app is not installed. If it is, update inventory. If it is not, run custom policy event.
+# Info: A simple template to check to see if a specific app is not installed. If it is, update inventory. If it is not, run custom policy event.
 
 # Paramater 4: Application Name
 # Paramater 5: Custom Event Name
