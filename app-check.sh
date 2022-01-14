@@ -2,6 +2,7 @@
 
 # Written By: Adam Williams
 # Info: A simple template to check to see if a specific app is not installed. If it is, update inventory. If it is not, run custom policy event.
+# This assists with a bug within Jamf Pro where it believes the Mac does not have any apps installed.
 
 # Paramater 4: Application Name
 # Paramater 5: Custom Event Name
