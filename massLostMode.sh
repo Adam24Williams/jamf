@@ -4,8 +4,8 @@
 
 # server connection information
 URL="https://hilliard.jamfcloud.com"
-userName="apiadmin"
-password="2140Atlas"
+userName="username"
+password="pass"
 workingFile="/tmp/neededCSV.csv"
 apiDataTrue="<mobile_device><extension_attributes><extension_attribute><name>Lost Mode Enforced</name><value>Enabled</value></extension_attribute></extension_attributes></mobile_device>"
 
