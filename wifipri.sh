@@ -16,6 +16,18 @@ SECTYPE3="WPA2" #This is option if you aren't going to move $SSIDNAME3
 #Getting the current hardware port for WiFi
 HWPORT=$(networksetup -listallhardwareports | awk '/Wi-Fi|AirPort/{getline; print $NF}')
 
+#Gathering current list of preferred networks
+SSIDLIST=$(networksetup -listpreferredwirelessnetworks "$HWPORT" | tail -n +2)
+
+#Creating array of the results
+SAVEIFS=$IFS
+IFS=$'\n'
+nArray=($SSIDLIST)
+IFS=$SAVEIFS
+
+maxCount=${#nArray[@]}
+echo "$maxCount saved networks found!"
+
 #Checking if SSIDs exists
 if [[ -z $(networksetup -listpreferredwirelessnetworks "$HWPORT" | grep "$SSIDNAME1") ]]; then
     echo "$SSIDNAME1 is not currently installed"
@@ -26,14 +38,14 @@ fi
 
 if [[ -z $(networksetup -listpreferredwirelessnetworks "$HWPORT" | grep "$SSIDNAME2") ]]; then
     echo "$SSIDNAME2 is not currently installed"
-    exit 1
+    index2=$maxCount
 else
     echo "$SSIDNAME2 is installed"
 fi
 
 if [[ -z $(networksetup -listpreferredwirelessnetworks "$HWPORT" | grep "$SSIDNAME3") ]]; then
     echo "$SSIDNAME3 is not currently installed"
-    exit 1
+    index3=$maxCount
 else
     echo "$SSIDNAME3 is installed"
 fi
