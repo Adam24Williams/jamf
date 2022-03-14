@@ -4,9 +4,9 @@
 #NOTE: This will check the box for auto join
 
 #Configurable SSID Information
-SSIDNAME1="CoverMyMeds" #Change to $4 if you want to pull this from Jamf policy instead
-SSIDNAME2="CoverMyMeds-Guest" #Change this to $5 if you want ^
-SSIDNAME3="CoverMyMeds-Outside" #Change this to $6 if you want ^^
+SSIDNAME1="ENTER_SSID_1" #Change to $4 if you want to pull this from Jamf policy instead
+SSIDNAME2="ENTER_SSID_2" #Change this to $5 if you want ^
+SSIDNAME3="ENTER_SSID_3" #Change this to $6 if you want ^^
 SECTYPE1="WPA2E" #Examples: WPA, WPA2, WPA2E, OPEN, NONE
 SECTYPE2="WPA2" #This is optional if you aren't going to move $SSIDNAME2
 SECTYPE3="WPA2" #This is option if you aren't going to move $SSIDNAME3
